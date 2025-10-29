@@ -12,26 +12,26 @@ namespace ParcialFinal_ProgramacionModular
         const int maxReservas = maxHabitaciones;
 
         #region Variables Habitaciones
-        int[] numHabitacion = new int[maxHabitaciones];
-        string[] tipoHabitacion = new string[maxHabitaciones];
-        double[] precioHabitacion = new double[maxHabitaciones];
-        int contadorHabitaciones = 0;
+        static int[] numHabitacion = new int[maxHabitaciones];
+        static string[] tipoHabitacion = new string[maxHabitaciones];
+        static double[] precioHabitacion = new double[maxHabitaciones];
+        static int contadorHabitaciones = 0;
         #endregion
 
         #region Variables Huespedes
-        string[] nombreHuesped = new string[maxHuespedes];
-        int[] huespedID = new int[maxHuespedes];
-        int[] telefonoHuesped = new int[maxHuespedes];
-        int contadorHuespedes = 0;
+        static string[] nombreHuesped = new string[maxHuespedes];
+        static int[] huespedID = new int[maxHuespedes];
+        static int[] telefonoHuesped = new int[maxHuespedes];
+        static int contadorHuespedes = 0;
         #endregion
 
         #region Variables Reservas
-        int[] reservaIDHabitacion = new int[maxReservas];
-        int[] reservaIDHuesped = new int[maxReservas];
-        string[] fechaEntrada = new string[maxReservas];
-        int[] numNoches = new int[maxReservas];
-        bool[] habitacionReservada = new bool[maxReservas];
-        int contadorReservas = 0;
+        static int[] reservaIDHabitacion = new int[maxReservas];
+        static int[] reservaIDHuesped = new int[maxReservas];
+        static string[] fechaEntrada = new string[maxReservas];
+        static int[] numNoches = new int[maxReservas];
+        static bool[] habitacionReservada = new bool[maxReservas];
+        static int contadorReservas = 0;
         #endregion
 
         static void Main(string[] args)
@@ -143,11 +143,7 @@ namespace ParcialFinal_ProgramacionModular
             }
 
             Console.WriteLine("Ingrese el número de habitación:");
-            if (!int.TryParse(Console.ReadLine(), out int numeroHabitacion) || numeroHabitacion <= 0)
-            {
-                Console.WriteLine("Número de habitación inválido. Debe ser un número entero.");
-                return;
-            }
+            int numeroHabitacion = int.Parse(Console.ReadLine());
 
             /*BuscarHabitacionPorNumero();
             if ()
@@ -155,15 +151,11 @@ namespace ParcialFinal_ProgramacionModular
 
             }*/
 
-            Console.WriteLine("Ingrese el tipo de habitación: Individual, Doble, Suite");
+            Console.WriteLine("Ingrese el tipo de habitación: Individual, Doble, Familiar");
             string tipo = Console.ReadLine();
 
             Console.WriteLine("Ingrese el precio por noche:");
-            if (!double.TryParse(Console.ReadLine(), out double precio) || precio <= 0)
-            {
-                Console.WriteLine("Precio inválido. Debe ser un número positivo.");
-                return;
-            }
+            int precio = int.Parse(Console.ReadLine());
 
             numHabitacion[contadorHabitaciones] = numeroHabitacion;
             tipoHabitacion[contadorHabitaciones] = tipo;
@@ -172,17 +164,14 @@ namespace ParcialFinal_ProgramacionModular
 
         }
 
-         static void EditarHabitacion()
+        static void EditarHabitacion()
         {
             Console.WriteLine("Ingrese el número de habitación a editar:");
-            if (!int.TryParse(Console.ReadLine(), out int numeroHabitacion) || numeroHabitacion <= 0)
-            {
-                Console.WriteLine("Número de habitación inválido. Debe ser un número entero.");
-                return;
+            int indiceHabitacion = int.Parse(Console.ReadLine());
 
-                int indiceHabitacion; //= BuscarHabitacionPorNumero();
+            //indiceHabitacion = BuscarHabitacionPorNumero();
 
-            }
+            
         }
 
        static void VerDisponibilidadHabitacion()
@@ -191,11 +180,7 @@ namespace ParcialFinal_ProgramacionModular
             string fechaEntrada = Console.ReadLine();
 
             Console.WriteLine("Ingrese el número de noches");
-            if (!int.TryParse(Console.ReadLine(), out int numNoches) || numNoches <= 0)
-            {
-                Console.WriteLine("Número de noches inválido. Debe ser un número entero positivo.");
-                return;
-            }
+            int numNoches = int.Parse(Console.ReadLine());
 
             Console.WriteLine($"Habitaciones disponibles para: {fechaEntrada} por {numNoches} noches:");
             Console.WriteLine("Número:\t Tipo:\t Precio por Noche:");
@@ -210,44 +195,44 @@ namespace ParcialFinal_ProgramacionModular
         //Realizado por Majo
         #region Gestión de Huespedes
 
-            void GestionHuespedes()
+           static void GestionHuespedes()
             {
             }
 
-            void RegistrarHuesped()
+            static void RegistrarHuesped()
             {
             }
 
-            void MostrarListaHuespedes()
+            static void MostrarListaHuespedes()
             {
             }
 
-            void EditarHuesped()
+            static void EditarHuesped()
             {
             }
             #endregion
 
         #region Gestión de Reservas
             //Realizado por Laura
-            void GestionReservas()
+            static void GestionReservas()
             {
             }
 
             //Realizado por Majo
-            void CrearReserva()
+            static void CrearReserva()
             {
             }
 
-            void MostrarListaReservas()
+            static void MostrarListaReservas()
             {
             }
 
             //Realizado por Laura
-            void HistorialReservas()
+            static void HistorialReservas()
             {
             }
 
-            void CancelarReserva()
+            static void CancelarReserva()
             {
             }
 
@@ -256,17 +241,17 @@ namespace ParcialFinal_ProgramacionModular
         #region Módulos auxiliares para validar y buscar
 
         //Realizado por Laura
-        void ValidarDisponibilidadHabitacion()
+        static void ValidarDisponibilidadHabitacion()
         {
         }
 
         //Realizado por Majo
-        void BuscarHuespedPorID()
+        static void BuscarHuespedPorID()
         {
         }
 
         //Realizado por Laura
-        void BuscarHabitacionPorNumero()
+        static void BuscarHabitacionPorNumero()
         {
         }
 
