@@ -1,4 +1,6 @@
-﻿namespace ParcialFinal_ProgramacionModular
+﻿using System.Reflection.Metadata;
+
+namespace ParcialFinal_ProgramacionModular
 {
     internal class Program
     {
@@ -46,68 +48,179 @@
         //Realizado por Laura
         #region Gestión de Habitaciones
 
-        static void GestionHabitaciones()
+         void GestionHabitaciones()
         {
+            int opcion;
+
+            do
+            {
+                Console.WriteLine("Gestión de Habitaciones:");
+                Console.WriteLine("1. Registrar nueva habitación");
+                Console.WriteLine("2. Mostrar lista de habitaciones");
+                Console.WriteLine("3. Editar habitación");
+                Console.WriteLine("4. Ver disponibilidad de habitación");
+                Console.WriteLine("5. Volver al menú principal");
+
+                if (!int.TryParse(Console.ReadLine(), out opcion))
+                {
+                    opcion = 0;
+                }
+
+                switch (opcion)
+                {
+                    case 1:
+                        RegistrarHabitacion();
+                        break;
+                    case 2:
+                        MostrarListaHabitaciones();
+                        break;
+                    case 3:
+                        EditarHabitacion();
+                        break;
+                    case 4:
+                        VerDisponibilidadHabitacion();
+                        break;
+                    case 5:
+                        Console.WriteLine("Volviendo al menú principal");
+                        break;
+                    default:
+                        Console.WriteLine("Opción inválida. Seleccione una opción del 1 al 5.");
+                        break;
+                }
+
+            } while (opcion != 5);
         }
 
-        static void MostrarListaHabitaciones()
+        void MostrarListaHabitaciones()
         {
+            if(contadorHabitaciones == 0)
+            {
+                Console.WriteLine("No hay habitaciones registradas.");
+                return;
+            }
+
+            Console.WriteLine("Lista de Habitaciones:");
+            Console.WriteLine("Número:\t Tipo:\t Precio por Noche:");
+            for (int i = 0; i < contadorHabitaciones; i++)
+            {
+                Console.WriteLine($"{numHabitacion[i]}\t{tipoHabitacion[i]} \t {precioHabitacion[i]} ");
+            }
         }
 
-        static void RegistrarHabitacion()
+        void RegistrarHabitacion()
         {
+            if(contadorHabitaciones >= maxHabitaciones)
+            {
+                Console.WriteLine("No se pueden registrar más habitaciones. Capacidad máxima de habitaciones alcanzada");
+                return;
+            }
+
+            Console.WriteLine("Ingrese el número de habitación:");
+            if(!int.TryParse(Console.ReadLine(), out int numeroHabitacion) || numeroHabitacion <= 0)
+            {
+                Console.WriteLine("Número de habitación inválido. Debe ser un número entero.");
+                return;
+            }
+
+            /*BuscarHabitacionPorNumero();
+            if ()
+            {
+
+            }*/
+
+            Console.WriteLine("Ingrese el tipo de habitación: Individual, Doble, Suite");
+            string tipo = Console.ReadLine();
+
+            Console.WriteLine("Ingrese el precio por noche:");
+            if(!double.TryParse(Console.ReadLine(), out double precio) || precio <= 0)
+            {
+                Console.WriteLine("Precio inválido. Debe ser un número positivo.");
+                return;
+            }
+
+            numHabitacion[contadorHabitaciones] = numeroHabitacion;
+            tipoHabitacion [contadorHabitaciones] = tipo;
+            precioHabitacion[contadorHabitaciones] = precio;
+            contadorHabitaciones++;
+
         }
 
-        static void EditarHabitacion()
+        void EditarHabitacion()
         {
+            Console.WriteLine("Ingrese el número de habitación a editar:");
+            if(!int.TryParse(Console.ReadLine(), out int numeroHabitacion) || numeroHabitacion <= 0)
+            {
+                Console.WriteLine("Número de habitación inválido. Debe ser un número entero.");
+                return;
+
+                int indiceHabitacion; //= BuscarHabitacionPorNumero();
+
+            }
         }
 
-        static void VerDisponibilidadHabitacion()
+         void VerDisponibilidadHabitacion()
         {
+            Console.WriteLine("Ingrese la fecha de entrada");
+            string fechaEntrada = Console.ReadLine();
+
+            Console.WriteLine("Ingrese el número de noches");
+            if(!int.TryParse(Console.ReadLine(), out int numNoches) || numNoches <= 0)
+            {
+                Console.WriteLine("Número de noches inválido. Debe ser un número entero positivo.");
+                return;
+            }
+
+            Console.WriteLine($"Habitaciones disponibles para: {fechaEntrada} por {numNoches} noches:");
+            Console.WriteLine("Número:\t Tipo:\t Precio por Noche:");
+
+            for(int i = 0; i < contadorHabitaciones; i++)
+            {
+                string dispoinibilidad; // = ValidarDisponibilidadHabitacion();
+            }
         }
         #endregion
 
         //Realizado por Majo
         #region Gestión de Huespedes
 
-        static void GestionHuespedes()
+        void GestionHuespedes()
         {
         }
 
-        static void RegistrarHuesped()
+        void RegistrarHuesped()
         {
         }
 
-        static void MostrarListaHuespedes()
+        void MostrarListaHuespedes()
         {
         }
 
-        static void EditarHuesped()
+        void EditarHuesped()
         {
         }
         #endregion
 
         #region Gestión de Reservas
         //Realizado por Laura
-        static void GestionReservas()
+        void GestionReservas()
         {
         }
 
         //Realizado por Majo
-        static void CrearReserva()
+        void CrearReserva()
         {
         }
 
-        static void MostrarListaReservas()
+        void MostrarListaReservas()
         {
         }
 
         //Realizado por Laura
-        static void HistorialReservas()
+        void HistorialReservas()
         {
         }
 
-        static void CancelarReserva()
+        void CancelarReserva()
         {
         }
 
@@ -116,17 +229,17 @@
         #region Módulos auxiliares para validar y buscar
 
         //Realizado por Laura
-        static void ValidarDisponibilidadHabitacion()
+        void ValidarDisponibilidadHabitacion()
         {
         }
 
         //Realizado por Majo
-        static void BuscarHuespedPorID()
+        void BuscarHuespedPorID()
         {
         }
 
         //Realizado por Laura
-        static void BuscarHabitacionPorNumero()
+        void BuscarHabitacionPorNumero()
         {
         }
 
