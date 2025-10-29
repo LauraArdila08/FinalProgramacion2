@@ -40,15 +40,216 @@ namespace ParcialFinal_ProgramacionModular
         }
 
         //Realizado por Majo
-        static void Menu()
+        namespace ConsoleApp2
+
+    {
+
+        internal class Program
         {
+
+
+            static void Main(string[] args)
+            {
+
+                int[,] habitaciones = new int[20, 3];
+
+                int habitacionesCreadas = 0;
+
+                while (true)
+                {
+
+                    Console.WriteLine("Bienvenido, escoja una opcion " +
+
+                        "\n 1... Crear habitación" +
+
+                        "\n 2... Ver habitaciones" +
+
+                        "\n 3... Editar habitaciones");
+
+                    int opcion = Convert.ToInt32(Console.ReadLine());
+
+                    BorrarConsola();
+
+                    switch (opcion)
+                    {
+
+                        case 1:
+
+                            CrearHabitacion(habitaciones, habitacionesCreadas);
+
+                            habitacionesCreadas++;
+
+                            break;
+
+                        case 2:
+
+                            MostrarMatriz(habitaciones);
+
+                            break;
+
+                        case 3:
+
+                            EditarHabitacion(habitaciones);
+
+                            break; // Sale del Main (termina el programa)
+
+                        default:
+
+                            Console.WriteLine("Opción no válida. Intente de nuevo.");
+
+                            break;
+
+                    }
+
+                }
+
+
+            }
+
+            static void EditarHabitacion(int[,] habitaciones)
+            {
+
+                Console.WriteLine("EDITANDO HABITACIÓN");
+
+                Console.WriteLine("Por favor ingrese el numero de la habitacion a editar");
+
+                int numeroDeHabitacion = Convert.ToInt32(Console.ReadLine());
+
+                for (int i = 0; i < habitaciones.GetLength(0); i++)
+                {
+
+                    if (habitaciones[i, 0] == numeroDeHabitacion)
+                    {
+
+                        Console.WriteLine("Habitacion encontrada");
+
+                        CrearHabitacion(habitaciones, i);
+
+                        return;
+
+                    }
+
+                }
+
+                Console.WriteLine("Habitacion no encontrada");
+
+            }
+
+            static void CrearHabitacion(int[,] habitaciones, int indexDeHabitacion)
+            {
+
+                if (indexDeHabitacion == 20)
+                {
+
+                    Console.WriteLine("HABITACIONES COMPLETAS");
+
+                    return;
+
+                }
+
+                Console.WriteLine("Creando habitacion");
+
+                Console.WriteLine("Ingrese el número de la habitacion");
+
+                int numero = Convert.ToInt32(Console.ReadLine());
+
+                habitaciones[indexDeHabitacion, 0] = numero;
+
+                Console.WriteLine("Ingrese el tipo de la habitacion");
+
+                Console.WriteLine("1 -> basica \n 2 -> Doble \n 3 -> Familiar");
+
+                bool tipoValido = false;
+
+                while (tipoValido == false)
+                {
+
+                    int tipo = Convert.ToInt32(Console.ReadLine());
+
+                    if (tipo < 1 || tipo > 3)
+                    {
+
+                        tipoValido = false;
+
+                        Console.WriteLine("Tipo de habitacio no es valido, vuelva a intentarlo");
+
+                    }
+                    else
+                    {
+
+                        tipoValido = true;
+
+                        habitaciones[indexDeHabitacion, 1] = tipo;
+
+                    }
+
+                }
+
+
+                Console.WriteLine("Ingrese el precio de la habitacion");
+
+                int precio = Convert.ToInt32(Console.ReadLine());
+
+                habitaciones[indexDeHabitacion, 2] = precio;
+
+
+            }
+
+            static void MostrarMatriz(int[,] matriz)
+            {
+
+                Console.WriteLine("Numero  Tipo   Precio");
+
+                for (int i = 0; i < matriz.GetLength(0); i++)
+                {
+
+                    for (int j = 0; j < matriz.GetLength(1); j++)
+                    {
+
+                        if (j == 1)
+                        {
+
+                            if (matriz[i, j] == 1) Console.Write("Basica  ");
+
+                            else if (matriz[i, j] == 2) Console.Write("Doble     ");
+
+                            else if (matriz[i, j] == 3) Console.Write("Familiar  ");
+
+                        }
+                        else
+                        {
+
+                            Console.Write($"{matriz[i, j]} |");
+
+                        }
+
+
+                    }
+
+                    Console.WriteLine();
+
+                }
+
+            }
+
+            static void BorrarConsola()
+            {
+
+                Console.Clear();
+
+            }
 
         }
 
-        //Realizado por Laura
-        #region Gestión de Habitaciones
 
-         void GestionHabitaciones()
+    }
+
+
+
+    //Realizado por Laura
+    #region Gestión de Habitaciones
+
+    void GestionHabitaciones()
         {
             int opcion;
 
