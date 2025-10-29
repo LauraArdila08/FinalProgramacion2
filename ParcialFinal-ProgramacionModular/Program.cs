@@ -43,6 +43,29 @@ namespace ParcialFinal_ProgramacionModular
 
         static void Menu()
         {
+            Console.WriteLine($"Menú hotel L&M");
+            Console.WriteLine($" \n Seleccione la opción que desee realizar" + "\n 1.Ir al menú de gestión de habitaciones"
+                + "\n 2.Ir al menú de gestión de huespedes" + "\n 3.Ir al menú de gestión de reservas "
+                + "\n 4.Salir del programa");
+            int opcion = int.Parse(Console.ReadLine());
+           
+            switch (opcion)
+            {
+                case 1:
+                    GestionHabitaciones();
+                    break;
+                case 2:
+                    GestionHuespedes();
+                    break;
+                case 3:
+                    GestionReservas();
+                    break;
+                case 4:
+                //BorrarConsola();
+                default:
+                    Console.WriteLine($"Acción inválida ,ingresar un número entre 1 y 4");
+                    break;
+            }
 
         }
 
@@ -50,7 +73,7 @@ namespace ParcialFinal_ProgramacionModular
         //Realizado por Laura
         #region Gestión de Habitaciones
 
-        void GestionHabitaciones()
+       static void GestionHabitaciones()
         {
             int opcion;
 
@@ -95,7 +118,7 @@ namespace ParcialFinal_ProgramacionModular
             } while (opcion != 5);
         }
 
-        void MostrarListaHabitaciones()
+         static void MostrarListaHabitaciones()
         {
             if (contadorHabitaciones == 0)
             {
@@ -111,7 +134,7 @@ namespace ParcialFinal_ProgramacionModular
             }
         }
 
-        void RegistrarHabitacion()
+       static void RegistrarHabitacion()
         {
             if (contadorHabitaciones >= maxHabitaciones)
             {
@@ -149,7 +172,7 @@ namespace ParcialFinal_ProgramacionModular
 
         }
 
-        void EditarHabitacion()
+         static void EditarHabitacion()
         {
             Console.WriteLine("Ingrese el número de habitación a editar:");
             if (!int.TryParse(Console.ReadLine(), out int numeroHabitacion) || numeroHabitacion <= 0)
@@ -162,7 +185,7 @@ namespace ParcialFinal_ProgramacionModular
             }
         }
 
-        void VerDisponibilidadHabitacion()
+       static void VerDisponibilidadHabitacion()
         {
             Console.WriteLine("Ingrese la fecha de entrada");
             string fechaEntrada = Console.ReadLine();
