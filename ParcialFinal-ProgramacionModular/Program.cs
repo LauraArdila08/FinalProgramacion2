@@ -23,6 +23,7 @@ namespace ParcialFinal_ProgramacionModular
         static int[] huespedID = new int[maxHuespedes];
         static int[] telefonoHuesped = new int[maxHuespedes];
         static int contadorHuespedes = 0;
+        
         #endregion
 
         #region Variables Reservas
@@ -197,19 +198,127 @@ namespace ParcialFinal_ProgramacionModular
 
            static void GestionHuespedes()
             {
+            int opcion;
+            Console.WriteLine($"Bienvenido a la gestión huéspedes;ingrese la opción que requiere" +
+                "\n 1.Registrar huéspedes" + "\n 2.Mostrar lista de huéspedes" + "\n 3.Editar información  huésped" +
+                "\n 4.Salir de gestión de huéspedes");
+            if (!int.TryParse(Console.ReadLine(), out opcion))
+            {
+                opcion = 0;
+            }
+            switch (opcion)
+            {
+                case 1: RegistrarHuesped();
+                    break;
+                case 2: MostrarListaHuespedes();
+                    break;
+                case 3: 
+                    EditarHuesped();
+                    break;
+                case 4:
+                    Console.WriteLine("Volviendo al Menú Principal...");
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida. Intente de nuevo.");
+                    break;
+            } while (opcion != 4) ;
+
+
+
+        }
+
+        static void RegistrarHuesped()
+            {
+            if (contadorHuespedes >= maxHuespedes)
+            {
+                Console.WriteLine("\nERROR: Capacidad máxima de huéspedes (20) alcanzada.");
+                return;
             }
 
-            static void RegistrarHuesped()
+            Console.Write("\nIngrese nombre del huésped: ");
+            string nombre = Console.ReadLine();
+
+            Console.Write("Ingrese documento de identidad: ");
+            int documento = Convert.ToInt32(Console.ReadLine());
+          
+            int BuscarHuesped(int documento)
             {
+                for (int i = 0; i < contadorHuespedes; i++)
+                {
+                    if (huespedID[i] == documento)
+                    {
+                        return i; 
+                    }
+                }
+                return -1; 
             }
+
+            if (BuscarHuesped(documento) != -1)
+            {
+                Console.WriteLine("ERROR: Ya existe un huésped con ese documento.");
+                return;
+            }
+
+            Console.Write("Ingrese teléfono: ");
+            int telefono = Convert.ToInt32(Console.ReadLine());
+
+            nombreHuesped[contadorHuespedes] = nombre;
+            huespedID[contadorHuespedes] = documento;
+            telefonoHuesped[contadorHuespedes] = telefono;
+            contadorHuespedes++;
+
+            Console.WriteLine("\n Huésped registrado con éxito.");
+        }
 
             static void MostrarListaHuespedes()
             {
+            if (contadorHuespedes == 0)
+            {
+                Console.WriteLine("\n No hay huéspedes registrados.");
+                return;
             }
+
+            Console.WriteLine("\n Lista de huéspedes registrados ");
+            Console.WriteLine("ID\t Documento\t\tNombre\t\tTeléfono");
+            Console.WriteLine("-----------------------------------------------------");
+            for (int i = 0; i < contadorHuespedes; i++)
+            {
+               
+                Console.WriteLine($"{i + 1}\t{huespedID[i],-15}\t{nombreHuesped[i],-10}\t{telefonoHuesped[i]}");
+            }
+
+        }
 
             static void EditarHuesped()
             {
+            Console.Write("\nIngrese el documento de identidad del huésped a editar: ");
+            int documento = Convert.ToInt32(Console.ReadLine());
+           
+            int indice = BuscarHuesped (documento);
+            if (indice == -1)
+            {
+                Console.WriteLine("ERROR: Huésped no encontrado.");
+                return;
             }
+
+            Console.WriteLine($"\nEditando Huésped: {nombreHuesped[indice]} ");
+
+            Console.Write("Nuevo nombre (actual: " + nombreHuesped[indice] + "): ");
+            string nuevoNombre = Console.ReadLine();
+            if (!string.IsNullOrEmpty(nuevoNombre))
+            {
+                nombreHuesped[indice] = nuevoNombre;
+            }
+
+            Console.Write("Nuevo teléfono (actual: " + telefonoHuesped[indice] + "): ");
+            int nuevoTelefono = Convert.ToInt32(Console.ReadLine());
+            if (!int.IsNullOrEmpty(nuevoTelefono))
+            {
+                telefonoHuesped[indice] = nuevoTelefono;
+            }
+
+            Console.WriteLine("\n Información del huésped actualizada.");
+        }
             #endregion
 
         #region Gestión de Reservas
