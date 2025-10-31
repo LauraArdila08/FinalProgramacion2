@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Maria Jose\\.nuget\\packages\\": {},
+    "C:\\Users\\Usuari\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Maria Jose\\OneDrive\\Documents\\EntregaFinal[1]\\FinalProgramacion2\\ParcialFinal-ProgramacionModular\\ParcialFinal-ProgramacionModular.csproj",
+      "projectUniqueName": "D:\\Laura Ardila\\LauraArdilaFP\\EntregaFinal\\FinalProgramacion2\\ParcialFinal-ProgramacionModular\\ParcialFinal-ProgramacionModular.csproj",
       "projectName": "ParcialFinal-ProgramacionModular",
-      "projectPath": "C:\\Users\\Maria Jose\\OneDrive\\Documents\\EntregaFinal[1]\\FinalProgramacion2\\ParcialFinal-ProgramacionModular\\ParcialFinal-ProgramacionModular.csproj",
-      "packagesPath": "C:\\Users\\Maria Jose\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Maria Jose\\OneDrive\\Documents\\EntregaFinal[1]\\FinalProgramacion2\\ParcialFinal-ProgramacionModular\\obj\\",
+      "projectPath": "D:\\Laura Ardila\\LauraArdilaFP\\EntregaFinal\\FinalProgramacion2\\ParcialFinal-ProgramacionModular\\ParcialFinal-ProgramacionModular.csproj",
+      "packagesPath": "C:\\Users\\Usuari\\.nuget\\packages\\",
+      "outputPath": "D:\\Laura Ardila\\LauraArdilaFP\\EntregaFinal\\FinalProgramacion2\\ParcialFinal-ProgramacionModular\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Maria Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Usuari\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -51,7 +51,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -72,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,5 @@
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ParcialFinal-ProgramacionModular.GeneratedMSBuildEditorConfig.editorconfig
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ParcialFinal-ProgramacionModular.AssemblyInfoInputs.cache
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ParcialFinal-ProgramacionModular.AssemblyInfo.cs
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ParcialFinal-ProgramacionModular.csproj.CoreCompileInputs.cache
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ParcialFinal-ProgramacionModular.sourcelink.json
