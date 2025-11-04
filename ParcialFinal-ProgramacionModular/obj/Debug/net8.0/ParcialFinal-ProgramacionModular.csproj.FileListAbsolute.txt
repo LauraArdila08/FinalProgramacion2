@@ -18,3 +18,13 @@ C:\Users\Maria Jose\OneDrive\Documents\EntregaFinal[1]\FinalProgramacion2\Parcia
 C:\Users\Maria Jose\OneDrive\Documents\EntregaFinal[1]\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ParcialFinal-ProgramacionModular.pdb
 C:\Users\Maria Jose\OneDrive\Documents\EntregaFinal[1]\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ParcialFinal-ProgramacionModular.genruntimeconfig.cache
 C:\Users\Maria Jose\OneDrive\Documents\EntregaFinal[1]\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ref\ParcialFinal-ProgramacionModular.dll
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\bin\Debug\net8.0\ParcialFinal-ProgramacionModular.exe
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\bin\Debug\net8.0\ParcialFinal-ProgramacionModular.deps.json
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\bin\Debug\net8.0\ParcialFinal-ProgramacionModular.runtimeconfig.json
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\bin\Debug\net8.0\ParcialFinal-ProgramacionModular.dll
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\bin\Debug\net8.0\ParcialFinal-ProgramacionModular.pdb
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ParcialFinal-ProgramacionModular.dll
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\refint\ParcialFinal-ProgramacionModular.dll
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ParcialFinal-ProgramacionModular.pdb
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ParcialFinal-ProgramacionModular.genruntimeconfig.cache
+D:\Laura Ardila\LauraArdilaFP\EntregaFinal\FinalProgramacion2\ParcialFinal-ProgramacionModular\obj\Debug\net8.0\ref\ParcialFinal-ProgramacionModular.dll

@@ -24,7 +24,7 @@ namespace ParcialFinal_ProgramacionModular
         #region Variables Huespedes
         static string[] nombreHuesped = new string[maxHuespedes];
         static string[] huespedID = new string[maxHuespedes];
-        static int[] telefonoHuesped = new int[maxHuespedes];
+        static long [] telefonoHuesped = new long[maxHuespedes];
         static int contadorHuespedes = 0;
         #endregion
 
@@ -222,36 +222,39 @@ namespace ParcialFinal_ProgramacionModular
         static void GestionHuespedes()
         {
             int opcion;
+
+            do { 
             Console.WriteLine($"Bienvenido a la gestión huéspedes;ingrese la opción que requiere" +
                 "\n 1.Registrar huéspedes" + "\n 2.Mostrar lista de huéspedes" + "\n 3.Editar información  huésped" +
                 "\n 4.Salir de gestión de huéspedes");
             opcion = int.Parse(Console.ReadLine());
 
-
-            switch (opcion)
-            {
-                case 1:
-                    RegistrarHuesped();
-                    break;
-                case 2:
-                    MostrarListaHuespedes();
-                    break;
-                case 3:
-                    EditarHuesped();
-                    break;
-                case 4:
-                    Menu();
-                    break;
-                default:
-                    Console.WriteLine("Opción no válida. Intente de nuevo.");
-                    break;
-            } while (opcion != 4) ;
+            
+           
+                switch (opcion)
+                {
+                    case 1:
+                        RegistrarHuesped();
+                        break;
+                    case 2:
+                        MostrarListaHuespedes();
+                        break;
+                    case 3:
+                        EditarHuesped();
+                        break;
+                    case 4:
+                        Menu();
+                        break;
+                    default:
+                        Console.WriteLine("Opción no válida. Intente de nuevo.");
+                        break;
+                }
+            } while (opcion != 4);
         }
 
         static void RegistrarHuesped()
         {
-            int contadorHuespedes = 0;
-            int maxHuespedes = 0;
+            
             if (contadorHuespedes >= maxHuespedes)
             {
                 Console.WriteLine("\nError: Capacidad máxima de huéspedes (20) alcanzada.");
@@ -272,7 +275,7 @@ namespace ParcialFinal_ProgramacionModular
             }
 
             Console.Write("Ingrese teléfono: ");
-            int telefono = Convert.ToInt32(Console.ReadLine());
+            long telefono = long.Parse(Console.ReadLine());
 
             nombreHuesped[contadorHuespedes] = nombre;
             huespedID[contadorHuespedes] = documento;
@@ -582,7 +585,7 @@ namespace ParcialFinal_ProgramacionModular
 
         static DateTime ConvertirAFecha(string fecha)
         {
-            if(DateTime.TryParseExact(fecha, "día/mes/año", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaConvertida))
+            if(DateTime.TryParseExact(fecha, "d/M/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaConvertida))
             {
                 return fechaConvertida;
             }
