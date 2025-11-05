@@ -326,7 +326,7 @@ namespace ParcialFinal_ProgramacionModular
             nombreHuesped[indice] = nuevoNombre;
 
             Console.Write("Nuevo teléfono (actual: " + telefonoHuesped[indice] + "): ");
-            int nuevoTelefono = Convert.ToInt32(Console.ReadLine());
+            long nuevoTelefono = Convert.ToInt64(Console.ReadLine());
 
             telefonoHuesped[indice] = nuevoTelefono;
 
@@ -407,7 +407,7 @@ namespace ParcialFinal_ProgramacionModular
                 return;
             }
 
-            Console.Write("Ingrese fecha de entrada (día/mes/año),ej:10/04/2025");
+            Console.Write("Ingrese fecha de entrada (día/mes/año),ej:10/04/2025  ");
             string fechaEntradaString = Console.ReadLine();
             if (ConvertirAFecha(fechaEntradaString) == DateTime.MinValue)
             {
