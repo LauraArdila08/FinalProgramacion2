@@ -387,11 +387,9 @@ namespace ParcialFinal_ProgramacionModular
 
             
             Console.Write("\nIngrese número de habitación a reservar: ");
-            if (!int.TryParse(Console.ReadLine(), out int numHabitacionElegido))
-            {
-                Console.WriteLine("Número de habitación inválido.");
-                return;
-            }
+            int numHabitacionElegido = int.Parse(Console.ReadLine());
+            
+           
             int indiceHabitacion = BuscarHabitacionPorID(numHabitacionElegido);
             if (indiceHabitacion == -1)
             {
