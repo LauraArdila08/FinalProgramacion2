@@ -116,7 +116,7 @@ namespace ParcialFinal_ProgramacionModular
 
             } while (opcion != 5);
 
-            BorrarPantalla();
+            
         }
 
         static void MostrarListaHabitaciones()
@@ -212,7 +212,7 @@ namespace ParcialFinal_ProgramacionModular
                 Console.WriteLine($"{habitacionID[i]}\t{tipoHabitacion[i],-10}\t{precioHabitacion[i]:C}\t{disponibilidad}");
             }
 
-            BorrarPantalla();
+            
         }
         #endregion
 
@@ -237,6 +237,7 @@ namespace ParcialFinal_ProgramacionModular
                         RegistrarHuesped();
                         break;
                     case 2:
+                        BorrarPantalla();
                         MostrarListaHuespedes();
                         break;
                     case 3:
@@ -304,7 +305,7 @@ namespace ParcialFinal_ProgramacionModular
                 Console.WriteLine($"{i + 1}\t{huespedID[i],-15}\t{nombreHuesped[i],-10}\t{telefonoHuesped[i]}");
             }
 
-            BorrarPantalla();
+            
         }
 
         static void EditarHuesped()
@@ -384,7 +385,7 @@ namespace ParcialFinal_ProgramacionModular
                 return;
             }
 
-            // 1. Seleccionar Habitación
+            
             Console.Write("\nIngrese número de habitación a reservar: ");
             if (!int.TryParse(Console.ReadLine(), out int numHabitacionElegido))
             {
@@ -433,7 +434,7 @@ namespace ParcialFinal_ProgramacionModular
                 Console.WriteLine("\nError: La habitación no está disponible en las fechas seleccionadas (Hay solapamiento con otra reserva).");
             }
 
-            BorrarPantalla();
+            
         }
 
             static void MostrarListaReservas()
@@ -469,7 +470,7 @@ namespace ParcialFinal_ProgramacionModular
                 Console.WriteLine("No hay reservas registradas para esta habitación.");
             }
 
-            BorrarPantalla();
+            
         }
 
             //Realizado por Laura
@@ -505,7 +506,7 @@ namespace ParcialFinal_ProgramacionModular
                 Console.WriteLine("No hay historial de reservas para este huésped.");
             }
 
-            BorrarPantalla();
+            
         }
 
             static void CancelarReserva()
