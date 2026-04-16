@@ -8,5 +8,10 @@ namespace ParcialFinal_ProgramacionModular
 {
     internal class Prueba2
     {
+        public void Message()
+        {
+            Console.WriteLine("Hola, soy la clase Prueba2");
+        }
+
     }
 }
